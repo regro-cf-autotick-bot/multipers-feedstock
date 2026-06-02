@@ -17,7 +17,7 @@ build:
     set "CONDA_PREFIX=%PREFIX:\=/%"  # [win]
     set "CMAKE_BUILD_PARALLEL_LEVEL=%CPU_COUNT%"  # [win]
     {{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
-  number: 0
+  number: 1
   skip: true  # [py<=39]
   missing_dso_whitelist:
     - $RPATH/multipers_core.dll              # [win]
