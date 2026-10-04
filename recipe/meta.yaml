@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 06ed980dae94ff2935968d7ea979b6fb80827ef882725886386f1730fee077ac
 
 build:
@@ -17,7 +17,7 @@ build:
     set "CONDA_PREFIX=%PREFIX:\=/%"  # [win]
     set "CMAKE_BUILD_PARALLEL_LEVEL=%CPU_COUNT%"  # [win]
     {{ PYTHON }} -m pip install . -vv --no-build-isolation --no-deps
-  number: 1
+  number: 2
   skip: true  # [py<=39]
   missing_dso_whitelist:
     - $RPATH/multipers_core.dll              # [win]
